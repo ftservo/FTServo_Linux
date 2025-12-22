@@ -9,23 +9,48 @@
 #include "SCS.h"
 
 SCS::SCS()
+	: Level(1)
+	, End(0)
+	, u8Status(0)
+	, u8Error(0)
+	, syncReadRxPacketIndex(0)
+	, syncReadRxPacketLen(0)
+	, syncReadRxPacket(nullptr)
+	, syncReadRxBuff(nullptr)
+	, syncReadRxBuffLen(0)
+	, syncReadRxBuffMax(0)
+	, syncTimeOut(0)
 {
-	Level = 1;//除广播指令所有指令返回应答
-	u8Status = 0;
 }
 
 SCS::SCS(u8 End)
+	: Level(1)
+	, End(End)
+	, u8Status(0)
+	, u8Error(0)
+	, syncReadRxPacketIndex(0)
+	, syncReadRxPacketLen(0)
+	, syncReadRxPacket(nullptr)
+	, syncReadRxBuff(nullptr)
+	, syncReadRxBuffLen(0)
+	, syncReadRxBuffMax(0)
+	, syncTimeOut(0)
 {
-	Level = 1;
-	this->End = End;
-	u8Status = 0;
 }
 
 SCS::SCS(u8 End, u8 Level)
+	: Level(Level)
+	, End(End)
+	, u8Status(0)
+	, u8Error(0)
+	, syncReadRxPacketIndex(0)
+	, syncReadRxPacketLen(0)
+	, syncReadRxPacket(nullptr)
+	, syncReadRxBuff(nullptr)
+	, syncReadRxBuffLen(0)
+	, syncReadRxBuffMax(0)
+	, syncTimeOut(0)
 {
-	this->Level = Level;
-	this->End = End;
-	u8Status = 0;
 }
 
 //1个16位数拆分为2个8位数

@@ -8,15 +8,20 @@
 #include "HLSCL.h"
 
 HLSCL::HLSCL()
-{
-	End = 0;
-}
-
-HLSCL::HLSCL(u8 End):SCSerial(End)
+	: SCSerial(0)
+	, Mem{}
 {
 }
 
-HLSCL::HLSCL(u8 End, u8 Level):SCSerial(End, Level)
+HLSCL::HLSCL(u8 End)
+	: SCSerial(End)
+	, Mem{}
+{
+}
+
+HLSCL::HLSCL(u8 End, u8 Level)
+	: SCSerial(End, Level)
+	, Mem{}
 {
 }
 
