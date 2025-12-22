@@ -37,6 +37,14 @@ SCSerial::SCSerial(u8 End, u8 Level)
 {
 }
 
+SCSerial::~SCSerial()
+{
+	if(fd != -1){
+		close(fd);
+		fd = -1;
+	}
+}
+
 bool SCSerial::begin(int baudRate, const char* serialPort)
 {
 	if(fd != -1){
