@@ -22,14 +22,15 @@ public:
 	SCSerial();
 	SCSerial(u8 End);
 	SCSerial(u8 End, u8 Level);
+	~SCSerial() override;
 
 protected:
-	int writeSCS(unsigned char *nDat, int nLen);//输出nLen字节
-	int readSCS(unsigned char *nDat, int nLen);//输入nLen字节
-	int readSCS(unsigned char *nDat, int nLen, unsigned long TimeOut);
-	int writeSCS(unsigned char bDat);//输出1字节
-	void rFlushSCS();//
-	void wFlushSCS();//
+	int writeSCS(unsigned char *nDat, int nLen) override;//输出nLen字节
+	int readSCS(unsigned char *nDat, int nLen) override;//输入nLen字节
+	int readSCS(unsigned char *nDat, int nLen, unsigned long TimeOut) override;
+	int writeSCS(unsigned char bDat) override;//输出1字节
+	void rFlushSCS() override;//
+	void wFlushSCS() override;//
 public:
 	unsigned long int IOTimeOut;//输入输出超时
 public:

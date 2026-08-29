@@ -8,15 +8,20 @@
 #include "SMS_STS.h"
 
 SMS_STS::SMS_STS()
-{
-	End = 0;
-}
-
-SMS_STS::SMS_STS(u8 End):SCSerial(End)
+	: SCSerial(0)
+	, Mem{}
 {
 }
 
-SMS_STS::SMS_STS(u8 End, u8 Level):SCSerial(End, Level)
+SMS_STS::SMS_STS(u8 End)
+	: SCSerial(End)
+	, Mem{}
+{
+}
+
+SMS_STS::SMS_STS(u8 End, u8 Level)
+	: SCSerial(End, Level)
+	, Mem{}
 {
 }
 

@@ -8,15 +8,20 @@
 #include "SCSCL.h"
 
 SCSCL::SCSCL()
-{
-	End = 1;
-}
-
-SCSCL::SCSCL(u8 End):SCSerial(End)
+	: SCSerial(1)
+	, Mem{}
 {
 }
 
-SCSCL::SCSCL(u8 End, u8 Level):SCSerial(End, Level)
+SCSCL::SCSCL(u8 End)
+	: SCSerial(End)
+	, Mem{}
+{
+}
+
+SCSCL::SCSCL(u8 End, u8 Level)
+	: SCSerial(End, Level)
+	, Mem{}
 {
 }
 

@@ -15,6 +15,7 @@ public:
 	SCS();
 	SCS(u8 End);
 	SCS(u8 End, u8 Level);
+	virtual ~SCS() = default;
 	int genWrite(u8 ID, u8 MemAddr, u8 *nDat, u8 nLen);//普通写指令
 	int regWrite(u8 ID, u8 MemAddr, u8 *nDat, u8 nLen);//异步写指令
 	int RegWriteAction(u8 ID = 0xfe);//异步写执行指令

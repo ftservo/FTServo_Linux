@@ -8,24 +8,41 @@
 #include "SCSerial.h"
 
 SCSerial::SCSerial()
+	: SCS()
+	, IOTimeOut(100)
+	, fd(-1)
+	, orgopt{}
+	, curopt{}
+	, txBufLen(0)
 {
-	IOTimeOut = 100;
-	fd = -1;
-	txBufLen = 0;
 }
 
-SCSerial::SCSerial(u8 End):SCS(End)
+SCSerial::SCSerial(u8 End)
+	: SCS(End)
+	, IOTimeOut(100)
+	, fd(-1)
+	, orgopt{}
+	, curopt{}
+	, txBufLen(0)
 {
-	IOTimeOut = 100;
-	fd = -1;
-	txBufLen = 0;
 }
 
-SCSerial::SCSerial(u8 End, u8 Level):SCS(End, Level)
+SCSerial::SCSerial(u8 End, u8 Level)
+	: SCS(End, Level)
+	, IOTimeOut(100)
+	, fd(-1)
+	, orgopt{}
+	, curopt{}
+	, txBufLen(0)
 {
-	IOTimeOut = 100;
-	fd = -1;
-	txBufLen = 0;
+}
+
+SCSerial::~SCSerial()
+{
+	if(fd != -1){
+		close(fd);
+		fd = -1;
+	}
 }
 
 bool SCSerial::begin(int baudRate, const char* serialPort)
